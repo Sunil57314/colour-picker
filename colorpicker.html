@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colorpicker</title>
+    <style>
+        h1{
+            font-size: 50px;
+            font-family: cursive;
+            text-align: center;
+        }
+        #btn{
+            width: 200px;
+            height: 60px;
+            margin-left: 40%;
+            color: black;
+            font-size: 20px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>JSPIDERS HEBBAL</h1>
+    <h1> COLOR CODE IS: <span id="code-display"></span></h1>
+    <button id="btn">click to change color code</button>
+    <script>
+        let code_display=document.getElementById("code-display")
+        let bodyElement=document.querySelector("body")
+        let button=document.getElementById("btn")
+        button.addEventListener("click",function(){
+            let hexcode="#"
+            let colorchars="0123456789hyfgbk"
+            for(let i=0;i<6;i++)
+            {
+                let random_num=Math.trunc(Math.random()*16)
+                hexcode+=colorchars[random_num]
+                bodyElement.style.backgroundColor=hexcode
+                code_display.innerText=hexcode
+            }
+        })
+    </script>
+</body>
+</html>
